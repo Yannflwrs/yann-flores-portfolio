@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#1b1b1b;color:#eee;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+.header{height:166px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 5.6vw;background:#1b1b1b;position:sticky;top:0;z-index:20}
+.logo{width:72px;height:72px;border:1px solid #eee;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:25px;font-style:italic;letter-spacing:-4px}
+nav{display:flex;gap:96px}
+nav a{font-size:17px;font-weight:500}
+nav a:hover{opacity:.6}
+.socials{justify-self:end;display:flex;gap:23px}
+.socials a{width:24px;height:24px;display:flex;align-items:center;justify-content:center;}
+.socials a:hover{opacity:.6;}
+.socials svg{width:21px;height:21px;fill:none;stroke:#eee;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;background:#1b1b1b}
+.work{margin:0;overflow:hidden;cursor:pointer;background:#222;aspect-ratio:3/4}
+.work img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s,opacity .35s}
+.work:hover img{transform:scale(1.025);opacity:.9}
+.contact{min-height:360px;padding:100px 6vw;display:flex;flex-direction:column;gap:18px;border-top:1px solid #333}
+.contact p{color:#aaa;margin:0;font-size:13px;text-transform:uppercase;letter-spacing:.15em}
+.contact>a{font-family:'DM Sans',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:400;letter-spacing:-0.03em;}
+.contact div{display:flex;gap:25px;color:#aaa}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;padding:35px 90px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:92vh;object-fit:contain}
+button{font:inherit}
+.close,.prev,.next{position:absolute;background:none;border:0;color:#fff;cursor:pointer;z-index:2}
+.close{right:25px;top:10px;font-size:48px}
+.prev{left:24px;font-size:60px}
+.next{right:24px;font-size:60px}
+@media(max-width:1100px){.gallery{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){
+.header{height:110px;padding:0 5vw;grid-template-columns:1fr auto}
+.logo{width:55px;height:55px;font-size:20px}
+nav{gap:20px}nav a{font-size:12px}.socials{display:none}
+.gallery{grid-template-columns:repeat(2,1fr);gap:3px}
+.lightbox{padding:25px}
+}
